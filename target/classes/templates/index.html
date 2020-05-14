@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p> Hello
+        <span th:text="${username}">[Username]</span>,
+        this is the current date <span th:text="${#dates.format(currentDate, 'dd-MM-yy HH:mm')}">[currentDate]</span>
+    </p>
+    <p>
+    <p th:if="${registrationForm.firstName}" th:text="'Hello ' + ${registrationForm.firstName} + ' !'"></p>
+        <form action="#" th:action="@{/}" th:object="${registrationForm}" method="post">
+            <p>First name: <input type="text" th:field="*{firstName}" /></p>
+            <p><input type="submit" value="Submit" /></p>
+
+        </form>
+    </p>
+</body>
+</html>
